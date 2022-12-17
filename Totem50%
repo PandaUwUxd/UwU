@@ -1,0 +1,17 @@
+    @EventHandler
+    public void TotemUse(EntityResurrectEvent event){
+
+        LivingEntity player = event.getEntity();
+        EntityEquipment totem = player.getEquipment();
+        ItemStack manop = totem.getItemInMainHand();
+        ItemStack manos = totem.getItemInOffHand();
+
+        if(manop.getType() == Material.TOTEM_OF_UNDYING || manos.getType() == Material.TOTEM_OF_UNDYING){
+
+            if (Math.random() > 0.5){
+                event.setCancelled(true);
+            }
+
+        }
+
+    }
